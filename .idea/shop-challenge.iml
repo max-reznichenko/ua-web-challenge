@@ -44,7 +44,6 @@
     <orderEntry type="library" scope="PROVIDED" name="hpricot (v0.8.6, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="html2haml (v1.0.1, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.6.1, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="innertube (v1.0.2, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="journey (v1.0.4, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v2.2.1, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.7.7, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
@@ -53,7 +52,6 @@
     <orderEntry type="library" scope="PROVIDED" name="libv8 (v3.11.8.17, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.3, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.1, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="middleware (v0.1.0, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.21, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.7.2, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mysql2 (v0.3.11, RVM: ruby-1.9.3-p327 [challenge]) [gem]" level="application" />
