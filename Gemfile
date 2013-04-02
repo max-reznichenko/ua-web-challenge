@@ -24,12 +24,12 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'jquery-rails'
+gem 'populator'
 
 group :development, :test do
   gem 'erb2haml'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'populator'
   gem 'pry-rails'
   gem 'quiet_assets'
   #gem 'better_errors'
