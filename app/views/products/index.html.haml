@@ -1,0 +1,50 @@
+.row
+  .span9
+    %h3
+      Products
+    %h4
+      = link_to '(clear filters)', products_path if @filtering.params.present?
+    - @filtering.products.each do |product|
+      .span3.well
+        = product.name.truncate(22)
+        %br
+        %a{ href: product_path(product) }
+          = image_tag product.image_attachments.first.attachment.url(:medium)
+    .pagination-centered= will_paginate @filtering.products, :renderer => BootstrapPagination::Rails
+  .span3
+    .well.sidebar-nav
+      %ul.nav.nav-list
+        %li.nav-header
+          %h4 Filters
+
+        -# SubCategories
+        %li.nav-header Sub Categories
+        - @filtering.sub_category_counts.each do |sub_category_id, value|
+          %li= build_filter_link @filtering, value['name'], value['count'], { sub_category_id: sub_category_id }
+
+        -# Brands
+        %li.nav-header Brands
+        - @filtering.brand_counts.each do |brand_id, value|
+          %li= build_filter_link @filtering, value['name'], value['count'], { brand_id: brand_id }
+
+        -# Price Filter
+        %li.nav-header Price Filter
+        %li
+          = text_field_tag :price_min, params[:min_price], class: 'span2', placeholder: 'Min price...'
+        %li
+          = text_field_tag :price_max, params[:max_price], class: 'span2', placeholder: 'Max price...'
+        %li
+          = button_tag 'Apply Price Filter', class: 'btn', id: 'price-submit'
+
+        %li.nav-header Product Properties
+
+        -# Product Properties Filter(shows only if any of the primary filters is selected)
+        - @filtering.property_counts.each do |property_name, values|
+          %li.nav-header
+            = property_name
+            - current_product_properties = @filtering.params[:product_properties].to_a
+            - values.each do |property_value_name, product_count|
+              - properties_list = current_product_properties + [property_value_name]
+              %li= build_filter_link @filtering, property_value_name, product_count, { product_properties: properties_list.uniq }
+
+              -# link_to "#{property_value_name} (#{product_count})",

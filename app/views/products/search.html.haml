@@ -1,0 +1,16 @@
+.row
+  - if @products.size > 0
+    %h3
+      Products found
+    - @products.each do |product|
+      .span3.well
+        = product.name.truncate(22)
+        %br
+        %a{ href: product_path(product) }
+          = image_tag product.image_attachments.first.attachment.url(:medium)
+  - else
+    %h3
+      No products found for query
+      %b= "'#{params[:query]}'"
+  .clearfix
+  .pagination-centered= will_paginate @products, :renderer => BootstrapPagination::Rails

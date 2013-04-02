@@ -1,0 +1,3 @@
+== UA Web Challenge Application
+
+See the dump and database structure in the repositroy root

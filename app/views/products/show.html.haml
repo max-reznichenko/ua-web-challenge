@@ -1,0 +1,65 @@
+%h1= @product.name
+
+%table.table.table-bordered
+  %tr
+    %th Name
+    %td= @product.name
+  %tr
+    %th Text Description
+    %td= @product.description
+  %tr
+    %th Primary Properties
+    %td= @product.human_primary_properties
+  %tr
+    %th Secondary Properties
+    %td= @product.human_secondary_properties
+  %tr
+    %th Images
+    %td
+      - @product.image_attachments.each do |image|
+        = image_tag image.attachment.url(:original)
+  %tr
+    %th Price
+    %td= "#{@product.price} UAH"
+  %tr
+    %th Discount value
+    %td= (@product.discount_value * 100).to_i.to_s + '%'
+  %tr
+    %th Discount price
+    %td= "#{@product.price * @product.discount_value} UAH"
+  %tr
+    %th Average Rating
+    %td
+      - rating_values = @product.ratings.map(&:value)
+      = rating_values.sum.to_f / rating_values.size.to_f
+
+%h3 Primary Properties
+%table.table.table-bordered
+  - @product.product_properties.where(is_primary: true).each do |property|
+    %tr
+      %th= property.name
+      %td= property.value
+
+%h3 Secondary Properties
+%table.table.table-bordered
+  - @product.product_properties.where(is_primary: false).each do |property|
+    %tr
+      %th= property.name
+      %td= property.value
+
+%h3 Reviews
+%table.table.table-bordered
+  - @product.reviews.each do |review|
+    %tr
+      %th= review.user.email
+      %td
+        %p
+          %b= review.custom_description
+        %p
+          %i= review.positive_description
+        %p
+          %span= review.negative_description
+
+.well
+  .pull-right
+    .btn.btn-primary= 'Buy Me Now!'
